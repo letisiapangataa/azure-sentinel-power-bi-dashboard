@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open Security Dashboard Documentation",
+			"type": "shell",
+			"command": "code",
+			"args": [
+				"powerbi-template/instructions.md"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

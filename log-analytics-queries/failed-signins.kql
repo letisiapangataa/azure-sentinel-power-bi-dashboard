@@ -1,0 +1,6 @@
+// Failed sign-in attempts by user and location
+SigninLogs
+| where ResultType != "0"
+| summarize FailedAttempts = count() by UserPrincipalName, Location, bin(TimeGenerated, 1h)
+| where FailedAttempts > 5
+| order by TimeGenerated desc

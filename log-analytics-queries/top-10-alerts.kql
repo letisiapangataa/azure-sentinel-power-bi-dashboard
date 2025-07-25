@@ -1,0 +1,4 @@
+// Sample KQL query: Top 10 Security Alerts
+SecurityAlert
+| summarize Count = count() by AlertName, Severity
+| top 10 by Count desc

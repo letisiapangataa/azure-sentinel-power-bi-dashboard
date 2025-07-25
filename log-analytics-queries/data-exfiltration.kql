@@ -1,0 +1,8 @@
+// Data exfiltration indicators
+AzureActivity
+| where OperationNameValue in ("Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read", 
+                               "Microsoft.Storage/storageAccounts/listKeys/action")
+| where ActivityStatusValue == "Success"
+| summarize Downloads = count() by Caller, ResourceGroup, bin(TimeGenerated, 1h)
+| where Downloads > 100
+| order by TimeGenerated desc

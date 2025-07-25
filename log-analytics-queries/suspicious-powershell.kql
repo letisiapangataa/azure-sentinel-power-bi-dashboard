@@ -1,0 +1,7 @@
+// Suspicious PowerShell activity
+SecurityEvent
+| where EventID == 4688  // Process creation
+| where Process contains "powershell.exe"
+| where CommandLine contains "-enc" or CommandLine contains "-nop" or CommandLine contains "downloadstring"
+| summarize SuspiciousCommands = count() by Computer, Account, bin(TimeGenerated, 1h)
+| order by TimeGenerated desc

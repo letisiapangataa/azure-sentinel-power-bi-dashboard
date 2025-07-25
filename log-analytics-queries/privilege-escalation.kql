@@ -1,0 +1,7 @@
+// Privilege escalation attempts
+SecurityEvent
+| where EventID in (4672, 4673, 4674)  // Special privileges assigned/used
+| where SubjectUserName != "SYSTEM" and SubjectUserName != ""
+| summarize PrivilegeEvents = count() by SubjectUserName, Computer, bin(TimeGenerated, 1h)
+| where PrivilegeEvents > 10
+| order by TimeGenerated desc
