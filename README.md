@@ -1,4 +1,4 @@
-# Security Monitoring Dashboard (Hackathon)
+# Security Monitoring Dashboard
 
 Real-time security dashboard Azure Sentinel and Power BI to visualise threat activity and security metrics.
 
