@@ -1,6 +1,6 @@
 # Security Monitoring Dashboard (Hackathon)
 
-A real-time security dashboard integrating Azure Sentinel and Power BI to visualize threat activity and security metrics.
+Real-time security dashboard Azure Sentinel and Power BI to visualise threat activity and security metrics.
 
 ## 🎯 Project Overview
 This project demonstrates how to build an enterprise-grade security monitoring solution using Microsoft's cloud security stack. The dashboard provides real-time insights into security threats, failed authentication attempts, network anomalies, and malware detections.
